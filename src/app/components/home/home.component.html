@@ -1,0 +1,14 @@
+<table class="table table-striped border">
+  <tr>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>Balance</td>
+  </tr>
+  <tr *ngFor="let client of clients">
+      <td><a routerLink="/client/edit/{{client.id}}">{{client.firstName}} {{client.lastName}}</a></td>
+      <td>{{client.email}}</td>
+      <td>{{client.phone}}</td>
+      <td (ngClass)="text-danger">{{client.dueAmount | currency:"INR" }}</td>
+    </tr>
+</table>
